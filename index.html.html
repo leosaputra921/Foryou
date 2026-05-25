@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ell ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:white;
+      overflow:hidden;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* LOVE */
+
+    .love{
+      position:absolute;
+      color:#ff4d8d;
+      animation:fall linear infinite;
+      top:-20px;
+      opacity:0.7;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(110vh);
+      }
+    }
+
+    /* CARD */
+
+    .card{
+      width:90%;
+      max-width:500px;
+      background:#181818;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:40px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      z-index:2;
+    }
+
+    h1{
+      font-size:55px;
+      color:#ff4d8d;
+      margin-bottom:10px;
+    }
+
+    .typing{
+      min-height:70px;
+      font-size:20px;
+      color:#d1d5db;
+      margin-bottom:30px;
+    }
+
+    .btn-group{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:15px;
+    }
+
+    button{
+      padding:13px 22px;
+      border:none;
+      border-radius:50px;
+      background:#ff4d8d;
+      color:white;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+      box-shadow:0 8px 20px rgba(255,77,141,0.4);
+    }
+
+    .message-box{
+      margin-top:30px;
+      padding:20px;
+      border-radius:20px;
+      background:#202020;
+      min-height:100px;
+      line-height:30px;
+      color:#f1f5f9;
+      animation:fade 0.5s;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- LOVE FALL -->
+
+  <script>
+
+    for(let i=0;i<45;i++){
+
+      let love=document.createElement("div");
+
+      love.classList.add("love");
+
+      love.innerHTML="❤️";
+
+      love.style.left=Math.random()*100+"vw";
+
+      love.style.fontSize=
+      15+Math.random()*20+"px";
+
+      love.style.animationDuration=
+      3+Math.random()*5+"s";
+
+      document.body.appendChild(love);
+
+    }
+
+  </script>
+
+  <!-- CARD -->
+
+  <div class="card">
+
+    <h1>Ell ❤️</h1>
+
+    <div class="typing" id="typing"></div>
+
+    <!-- BUTTON -->
+
+    <div class="btn-group">
+
+      <button onclick="showMessage(1)">
+        Kenapa Kamu? 💌
+      </button>
+
+      <button onclick="showMessage(2)">
+        Tentang Kamu 🌹
+      </button>
+
+      <button onclick="showMessage(3)">
+        Pesan Buat Ell ❤️
+      </button>
+
+      <button onclick="showMessage(4)">
+        Klik Ini ✨
+      </button>
+
+      <button onclick="showMessage(5)">
+        Secret 😳
+      </button>
+
+      <button onclick="showMessage(6)">
+        Last Message 💖
+      </button>
+
+    </div>
+
+    <!-- MESSAGE -->
+
+    <div class="message-box" id="messageBox">
+
+      Klik salah satu tombol di atas ❤️
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // TYPING
+
+    const text =
+    "You are my favorite person in this world ✨";
+
+    let i = 0;
+
+    function typing(){
+
+      if(i < text.length){
+
+        document.getElementById("typing")
+        .innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typing,70);
+
+      }
+
+    }
+
+    typing();
+
+    // MESSAGE
+
+    function showMessage(number){
+
+      let box =
+      document.getElementById("messageBox");
+
+      if(number == 1){
+
+        box.innerHTML =
+        "Karena kamu beda dari yang lain. Cara kamu hadir bikin hari aku jadi lebih tenang ❤️";
+
+      }
+
+      else if(number == 2){
+
+        box.innerHTML =
+        "Aku suka cara kamu ngobrol, ketawa, marah, bahkan hal kecil tentang kamu selalu bikin aku nyaman 🌹";
+
+      }
+
+      else if(number == 3){
+
+        box.innerHTML =
+        "Kalau suatu hari nanti aku capek sama dunia, semoga aku masih punya kamu buat jadi tempat pulang ❤️";
+
+      }
+
+      else if(number == 4){
+
+        box.innerHTML =
+        "Mungkin aku ga sempurna, tapi perasaan aku ke kamu selalu serius ✨";
+
+      }
+
+      else if(number == 5){
+
+        box.innerHTML =
+        "Secretnya... aku sering senyum sendiri kalau lagi mikirin kamu 😳💖";
+
+      }
+
+      else if(number == 6){
+
+        box.innerHTML =
+        "Terima kasih ya Ell udah hadir di hidup aku. Jangan pergi lama-lama ya ❤️";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
